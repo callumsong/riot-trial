@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Riot JS Server side rendering</title>
+  </head>
+  <body>
+    <h1>Hi</h1>
+    {{ tag_content | safe }}
+
+    <script src="riot.js"></script>
+    <script src="tags.js"></script>
+
+    <script>
+      riot.mount('root-tag',{first_name:'{{first_name}}'});
+    </script>
+  </body>
+</html>
