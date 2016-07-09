@@ -3,6 +3,7 @@ var express = require('express'),
     riot = require('riot'),
     root_tag = require('./riot-tags/root.tag'),
     header = require('./riot-tags/head.tag'),
+    skills = require('./skills'),
     app = express();
 
 // This gets all the tags included to allow server rendering
@@ -16,7 +17,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', function(req, res) {
-    var starting_name = 'Susan',
+    var starting_name = skills.first_name,
         tag_output = riot.render(root_tag, {first_name: starting_name});
     console.log(tag_output);
     res.render('index', {
