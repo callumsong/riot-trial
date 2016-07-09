@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     riot = require('gulp-riot'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    server = require('gulp-express');
 
 gulp.task('riot-server', function() {
   gulp.src('./riot-tags/**/*.tag')
@@ -27,3 +28,9 @@ gulp.task('riot-client', function() {
 gulp.task('riot', function() {
   gulp.run('riot-server', 'riot-client');
 });
+
+gulp.task('server', function() {
+  server.run(['server.js']);
+});
+
+gulp.task('default', ['riot', 'server']);
