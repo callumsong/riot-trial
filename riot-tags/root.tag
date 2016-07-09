@@ -1,4 +1,5 @@
 <root-tag>
+  <h1>Hi</h1>
   <sparta-list name="sparta_list"></sparta-list>
   <h2>Oh Hai {opts.first_name}</h2>
 
